@@ -1,0 +1,13 @@
+{
+  "name": "driver-onboarding-automation-tests",
+  "version": "1.0.0",
+  "description": "Automation tests for driver onboarding",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:chrome": "cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0"
+  }
+}
