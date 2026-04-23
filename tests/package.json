@@ -4,11 +4,13 @@
   "description": "Automation tests for driver onboarding",
   "Author": "Daniel Wang",
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "cy:chrome": "cypress run --browser chrome"
+    "dev": "node ../app/server.js",
+    "test:e2e": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug"
   },
   "devDependencies": {
-    "cypress": "^13.0.0"
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
   }
 }
