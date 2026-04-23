@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vehicle Registration</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Vehicle registration</h1>
+        <p class="muted">Step 2 of 2</p>
+      </header>
+
+      <form method="post" action="/vehicle" class="card">
+        <input type="hidden" name="driverId" value="<%= driverId %>" />
+
+        <div class="grid2">
+          <div class="field">
+            <label for="make">Make</label>
+            <input id="make" name="make" required value="<%= values.make || '' %>" />
+            <% if (errors.make) { %><div class="error"><%= errors.make[0] %></div><% } %>
+          </div>
+          <div class="field">
+            <label for="model">Model</label>
+            <input id="model" name="model" required value="<%= values.model || '' %>" />
+            <% if (errors.model) { %><div class="error"><%= errors.model[0] %></div><% } %>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="year">Year</label>
+            <input id="year" name="year" inputmode="numeric" required value="<%= values.year || '' %>" />
+            <% if (errors.year) { %><div class="error"><%= errors.year[0] %></div><% } %>
+          </div>
+          <div class="field">
+            <label for="insurancePolicyNumber">Insurance policy #</label>
+            <input id="insurancePolicyNumber" name="insurancePolicyNumber" required value="<%= values.insurancePolicyNumber || '' %>" />
+            <% if (errors.insurancePolicyNumber) { %><div class="error"><%= errors.insurancePolicyNumber[0] %></div><% } %>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="insuranceExpiryDate">Insurance expiry date</label>
+          <input id="insuranceExpiryDate" name="insuranceExpiryDate" type="date" required value="<%= values.insuranceExpiryDate || '' %>" />
+          <% if (errors.insuranceExpiryDate) { %><div class="error"><%= errors.insuranceExpiryDate[0] %></div><% } %>
+        </div>
+
+        <% if (errors.driverId) { %>
+          <div class="error">Missing driver id. Please complete sign up first.</div>
+        <% } %>
+
+        <div class="actions">
+          <button type="submit" class="btn">Finish</button>
+          <a class="link" href="/dashboard">View dashboard</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
+

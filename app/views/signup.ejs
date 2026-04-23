@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Driver Sign Up</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Driver sign up</h1>
+        <p class="muted">Step 1 of 2</p>
+      </header>
+
+      <form method="post" action="/signup" class="card">
+        <input type="hidden" name="ref" value="<%= ref %>" />
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" autocomplete="name" inputmode="text" required value="<%= values.fullName || '' %>" />
+          <% if (errors.fullName) { %><div class="error"><%= errors.fullName[0] %></div><% } %>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required value="<%= values.email || '' %>" />
+          <% if (errors.email) { %><div class="error"><%= errors.email[0] %></div><% } %>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" autocomplete="tel" inputmode="tel" required value="<%= values.phone || '' %>" />
+          <% if (errors.phone) { %><div class="error"><%= errors.phone[0] %></div><% } %>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="licenseNumber">Driver's license number</label>
+            <input id="licenseNumber" name="licenseNumber" required value="<%= values.licenseNumber || '' %>" />
+            <% if (errors.licenseNumber) { %><div class="error"><%= errors.licenseNumber[0] %></div><% } %>
+          </div>
+          <div class="field">
+            <label for="licenseRegion">State / province</label>
+            <input id="licenseRegion" name="licenseRegion" required value="<%= values.licenseRegion || '' %>" />
+            <% if (errors.licenseRegion) { %><div class="error"><%= errors.licenseRegion[0] %></div><% } %>
+          </div>
+        </div>
+
+        <% if (errors.campaignId) { %>
+          <div class="error">Missing or invalid campaign ref. Please use a signup link with <code>?ref=...</code>.</div>
+        <% } %>
+
+        <div class="actions">
+          <button type="submit" class="btn">Continue</button>
+          <a class="link" href="/dashboard">View dashboard</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
+
