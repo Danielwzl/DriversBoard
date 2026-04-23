@@ -6,7 +6,7 @@ npm install
 
 ## 2. Start server
 
-npm start
+npm run dev
 
 ## 3. Seed campaigns
 

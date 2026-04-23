@@ -4,7 +4,7 @@
   "main": "server/index.js",
   "Author": "Daniel Wang",
   "scripts": {
-    "dev": "node ./src/server.js",
+    "dev": "node ./server.js",
     "test": "vitest run"
   },
   "dependencies": {
