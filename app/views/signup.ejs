@@ -6,6 +6,7 @@
     <title>Driver Sign Up</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
+  <script src="/js/signup.js"></script>
   <body>
     <main class="container">
       <header class="header">
@@ -15,6 +16,12 @@
 
       <form method="post" action="/signup" class="card">
         <input type="hidden" name="ref" value="<%= ref %>" />
+
+          <div class="ref-buttons">
+            <button class="<%= ref === 'gg-search-1' ? 'active' : '' %>" type="button" onclick="setRef('gg-search-1')">Google</button>
+            <button class="<%= ref === 'fb-spring-1' ? 'active' : '' %>" type="button" onclick="setRef('fb-spring-1')">Facebook</button>
+            <button class="<%= ref === 'referral-1' ? 'active' : '' %>" type="button" onclick="setRef('referral-1')">Referral</button>
+          </div>
 
         <div class="field">
           <label for="fullName">Full name</label>

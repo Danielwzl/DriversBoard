@@ -67,3 +67,24 @@ code{color:#c7d2fe}
 .filters .field{margin:0}
 .header-actions{display:flex;gap:10px}
 
+.ref-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.ref-buttons button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #3a4a6b;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.ref-buttons button.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
